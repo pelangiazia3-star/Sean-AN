@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062b49">
+<title>Sean AN | Keselamatan Pelayaran</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f8fb;color:#17202a;line-height:1.6}
+nav{position:sticky;top:0;z-index:1000;background:#062b49;padding:14px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 12px #0003}
+.logo{color:#fff;font-size:25px;font-weight:800}.logo span{color:#ffb703}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600}
+nav a:hover{color:#ffb703}
+
+.hero{min-height:88vh;background:linear-gradient(#031c30cc,#031c30cc),url("radio-pantai-1.jpg") center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:35px 6%}
+.hero-content{max-width:850px}.badge{display:inline-block;background:#ffb703;color:#17202a;padding:7px 14px;border-radius:30px;font-weight:bold;margin-bottom:16px}
+.hero h1{font-size:clamp(42px,8vw,76px);line-height:1.05;margin-bottom:15px}.hero h1 span{color:#ffb703}
+.hero p{font-size:18px;margin:8px 0}.hero .sub{color:#d9e8f2}
+.btn{display:inline-block;border:0;border-radius:9px;padding:13px 20px;text-decoration:none;font-weight:800;margin:7px 4px;cursor:pointer}
+.yellow{background:#ffb703;color:#17202a}.red{background:#d62828;color:#fff}.blue{background:#087ea4;color:#fff}.dark{background:#062b49;color:#fff}
+section{padding:70px 6%}.title{text-align:center;margin-bottom:38px}.title h2{font-size:32px;color:#062b49}.title p{color:#607381}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;padding:25px;border-radius:16px;box-shadow:0 5px 20px #062b4912;border:1px solid #e6eef3}
+.icon{font-size:42px;margin-bottom:8px}.card h3{color:#062b49;margin-bottom:8px}
+
+.radio{background:#062b49;color:#fff;border-radius:20px;padding:35px;display:grid;grid-template-columns:1.2fr .8fr;gap:25px;align-items:center}
+.radio h2{color:#ffb703;margin-bottom:10px}.radio-panel{background:#ffffff12;border:1px solid #ffffff22;padding:25px;border-radius:15px;text-align:center}
+.channel{font-size:76px;line-height:1;font-weight:900;color:#ffb703}.small{font-size:14px;color:#d8e8f2}
+.equipment{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.equipment img{width:100%;height:300px;object-fit:cover;border-radius:15px;box-shadow:0 5px 16px #0002}
+
+.emergency{background:#d62828;color:#fff}.emergency .title h2{color:#fff}
+.alertbox{max-width:900px;margin:auto;background:#fff;color:#17202a;border-radius:18px;padding:28px}
+.alertbox h3{color:#d62828;margin-bottom:10px}.alertbox ul{padding-left:22px;margin:10px 0 18px}
+.callbox{text-align:center;margin-top:22px}.callbox .number{font-size:30px;font-weight:900;margin:10px 0}
+
+.step{max-width:900px;margin:14px auto;background:#fff;border-radius:12px;padding:19px 22px;box-shadow:0 4px 14px #0000000d}.step strong{color:#087ea4}
+.notice{background:#fff7db;border-left:5px solid #ffb703;padding:18px;border-radius:10px;margin-top:25px}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}.gallery figure{margin:0;background:#fff;padding:10px;border-radius:16px;box-shadow:0 5px 18px #0002}.gallery img{width:100%;height:350px;object-fit:cover;border-radius:11px}.gallery figcaption{padding:10px;font-weight:700;color:#062b49}
+
+footer{background:#031c30;color:#fff;text-align:center;padding:32px 6%}footer span{color:#ffb703}
+
+.top{position:fixed;right:18px;bottom:18px;width:45px;height:45px;border-radius:50%;border:0;background:#ffb703;color:#17202a;font-size:20px;font-weight:bold;display:none;z-index:999;cursor:pointer}
+@media(max-width:750px){
+ nav{flex-direction:column;gap:10px}nav ul{gap:10px}
+ .radio{grid-template-columns:1fr;padding:25px}
+ section{padding:55px 5%}.hero{min-height:80vh}
+ .equipment img,.gallery img{height:280px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Sean <span>AN</span></div>
+  <ul>
+    <li><a href="#beranda">Beranda</a></li>
+    <li><a href="#radio">Radio Pantai</a></li>
+    <li><a href="#keselamatan">Keselamatan</a></li>
+    <li><a href="#darurat">Darurat</a></li>
+    <li><a href="#kecelakaan">Kecelakaan</a></li>
+    <li><a href="#galeri">Galeri</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="beranda">
+  <div class="hero-content">
+    <div class="badge">PORTAL KESELAMATAN PELAYARAN</div>
+    <h1>Sean <span>AN</span></h1>
+    <p>Media edukasi keselamatan pelayaran dan komunikasi radio pantai.</p>
+    <p class="sub">Stasiun Radio Pantai Selatpanjang • Kepulauan Meranti • Riau</p>
+    <a class="btn red" href="#darurat">🚨 KEADAAN DARURAT</a>
+    <a class="btn yellow" href="#radio">📻 LIHAT RADIO</a>
+  </div>
+</section>
+
+<section id="radio">
+  <div class="title">
+    <h2>📻 Stasiun Radio Pantai</h2>
+    <p>Informasi komunikasi keselamatan pelayaran</p>
+  </div>
+
+  <div class="radio">
+    <div>
+      <h2>Komunikasi Radio Maritim</h2>
+      <p>
+        Stasiun Radio Pantai mendukung komunikasi keselamatan antara
+        kapal dan stasiun pantai. Perangkat VHF Marine digunakan untuk
+        komunikasi radio pada pelayaran.
+      </p>
+      <p style="margin-top:12px">
+        Pada keadaan darurat, gunakan prosedur komunikasi yang berlaku
+        dan sampaikan identitas kapal, posisi, kondisi darurat, serta
+        bantuan yang dibutuhkan.
+      </p>
+    </div>
+    <div class="radio-panel">
+      <div class="small">KANAL PANGGILAN & KESELAMATAN</div>
+      <div class="channel">16</div>
+      <div>VHF CHANNEL 16</div>
+      <div class="small">Pastikan penggunaan kanal mengikuti prosedur dan ketentuan yang berlaku.</div>
+    </div>
+  </div>
+
+  <div class="equipment">
+    <img src="radio-pantai-1.jpg" alt="Perangkat radio pantai">
+    <img src="radio-pantai-2.jpg" alt="ICOM VHF Marine Channel 16">
+  </div>
+</section>
+
+<section id="keselamatan">
+  <div class="title">
+    <h2>⚓ Keselamatan Pelayaran</h2>
+    <p>Hal-hal penting yang perlu diperhatikan sebelum dan selama pelayaran.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="icon">🛟</div><h3>Alat Keselamatan</h3><p>Pastikan alat keselamatan tersedia, diperiksa, dan mudah digunakan saat diperlukan.</p></div>
+    <div class="card"><div class="icon">📻</div><h3>Komunikasi Radio</h3><p>Pastikan perangkat komunikasi dapat digunakan dan pahami kanal keselamatan yang relevan.</p></div>
+    <div class="card"><div class="icon">🧭</div><h3>Navigasi</h3><p>Periksa perangkat navigasi dan informasi pelayaran sebelum kapal berangkat.</p></div>
+    <div class="card"><div class="icon">🌦️</div><h3>Cuaca</h3><p>Perhatikan informasi cuaca dan kondisi laut sebelum serta selama pelayaran.</p></div>
+  </div>
+</section>
+
+<section class="emergency" id="darurat">
+  <div class="title">
+    <h2>🚨 DARURAT DI LAUT</h2>
+    <p style="color:#fff">Gunakan sarana komunikasi yang tersedia dan ikuti prosedur keselamatan.</p>
+  </div>
+
+  <div class="alertbox">
+    <h3>📻 Komunikasi melalui VHF</h3>
+    <p>Gunakan <strong>VHF Channel 16</strong> untuk panggilan keselamatan/darurat sesuai prosedur komunikasi maritim yang berlaku.</p>
+
+    <p style="margin-top:15px"><strong>Informasi yang perlu disampaikan:</strong></p>
+    <ul>
+      <li>Nama atau identitas kapal</li>
+      <li>Posisi kapal</li>
+      <li>Jenis keadaan darurat</li>
+      <li>Jumlah orang yang membutuhkan bantuan</li>
+      <li>Jenis bantuan yang diperlukan</li>
+    </ul>
+
+    <div class="callbox">
+      <p><strong>Kontak Radio Pantai</strong></p>
+      <div class="number">37255</div>
+      <a class="btn yellow" href="tel:37255">📞 HUBUNGI RADIO PANTAI</a>
+      <a class="btn red" href="tel:115">🚨 HUBUNGI BASARNAS 115</a>
+      <p class="small" style="color:#555;margin-top:10px">
+        Tombol telepon membuka aplikasi panggilan pada perangkat yang mendukung.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="kecelakaan">
+  <div class="title">
+    <h2>⚠️ Kecelakaan Pelayaran</h2>
+    <p>Kenali beberapa kondisi yang dapat meningkatkan risiko kecelakaan di laut.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="icon">🌊</div><h3>Cuaca Buruk</h3><p>Gelombang tinggi dan angin kencang dapat meningkatkan risiko pelayaran.</p></div>
+    <div class="card"><div class="icon">🚢</div><h3>Tubrukan</h3><p>Kewaspadaan dan komunikasi yang baik penting untuk mengurangi risiko tubrukan.</p></div>
+    <div class="card"><div class="icon">🔥</div><h3>Kebakaran</h3><p>Kebakaran di kapal membutuhkan tindakan cepat dan penggunaan alat keselamatan sesuai prosedur.</p></div>
+    <div class="card"><div class="icon">⚙️</div><h3>Kerusakan Mesin</h3><p>Kerusakan mesin dapat mengurangi kemampuan kapal untuk bergerak dan membutuhkan penanganan.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="title">
+    <h2>🆘 Langkah Saat Keadaan Darurat</h2>
+    <p>Langkah umum untuk membantu proses pelaporan dan pertolongan.</p>
+  </div>
+
+  <div class="step"><strong>1. Tetap tenang dan utamakan keselamatan.</strong><br>Kenali kondisi darurat dan lakukan tindakan keselamatan sesuai prosedur kapal.</div>
+  <div class="step"><strong>2. Gunakan perangkat komunikasi.</strong><br>Gunakan VHF yang tersedia untuk melakukan komunikasi keselamatan.</div>
+  <div class="step"><strong>3. Sampaikan posisi kapal.</strong><br>Berikan posisi sejelas mungkin agar bantuan dapat diarahkan.</div>
+  <div class="step"><strong>4. Sampaikan jenis keadaan darurat.</strong><br>Jelaskan kondisi kapal dan bantuan yang dibutuhkan secara singkat dan jelas.</div>
+  <div class="step"><strong>5. Ikuti instruksi petugas.</strong><br>Dengarkan komunikasi radio dan ikuti instruksi dari pihak yang berwenang.</div>
+
+  <div class="notice">
+    <strong>Catatan:</strong> Website ini merupakan media edukasi. Komunikasi radio VHF tetap dilakukan menggunakan perangkat radio yang sebenarnya.
+  </div>
+</section>
+
+<section id="galeri">
+  <div class="title">
+    <h2>📸 Galeri Perangkat Radio</h2>
+    <p>Dokumentasi perangkat yang kamu kirim dari Stasiun Radio Pantai.</p>
+  </div>
+
+  <div class="gallery">
+    <figure>
+      <img src="radio-pantai-1.jpg" alt="Perangkat radio pantai">
+      <figcaption>Perangkat komunikasi radio pantai</figcaption>
+    </figure>
+    <figure>
+      <img src="radio-pantai-2.jpg" alt="ICOM VHF Marine Channel 16">
+      <figcaption>ICOM VHF Marine — Channel 16</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="title">
+    <h2>📞 Kontak Keselamatan</h2>
+    <p>Gunakan sarana komunikasi sesuai keadaan dan prosedur yang berlaku.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">📻</div>
+      <h3>Radio Pantai</h3>
+      <p>Nomor yang dimasukkan pada website:</p>
+      <h2 style="color:#087ea4;margin:10px 0">37255</h2>
+      <a class="btn blue" href="tel:37255">📞 Panggil Radio Pantai</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚨</div>
+      <h3>Basarnas</h3>
+      <p>Untuk keadaan darurat pencarian dan pertolongan, gunakan kanal kontak resmi yang tersedia.</p>
+      <a class="btn red" href="tel:115">📞 115</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>Sean <span>AN</span></h3>
+  <p>Edukasi Keselamatan Pelayaran</p>
+  <p>Stasiun Radio Pantai Selatpanjang • Kepulauan Meranti • Riau</p>
+  <p style="margin-top:12px;font-size:13px">© 2026 Sean AN</p>
+</footer>
+
+<button class="top" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const topBtn=document.getElementById("topBtn");
+window.addEventListener("scroll",()=>{
+  topBtn.style.display=window.scrollY>400?"block":"none";
+});
+</script>
+
+</body>
+</html>
