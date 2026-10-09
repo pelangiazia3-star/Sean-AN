@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sean AN - Edukasi Keselamatan Pelayaran">
+<title>Sean AN | Keselamatan Pelayaran</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f8fb;
+    color: #17324d;
+}
+
+header {
+    background: #062b49;
+    color: white;
+    padding: 16px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ffb703;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    background:
+        linear-gradient(rgba(4,35,58,.78), rgba(4,35,58,.78)),
+        url("IMG20260924093513.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 60px);
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    color: #ffb703;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffb703;
+    color: #062b49;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+}
+
+section {
+    padding: 65px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    color: #062b49;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #60758a;
+}
+
+.about {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.radio-box {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+    background: #062b49;
+    color: white;
+    text-align: center;
+    border-radius: 18px;
+}
+
+.radio-box h3 {
+    color: #ffb703;
+    font-size: 28px;
+}
+
+.channel {
+    font-size: clamp(30px, 6vw, 45px);
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,.1);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    color: #062b49;
+    margin-bottom: 10px;
+}
+
+.emergency {
+    background: #fff1f1;
+}
+
+.emergency-box {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-left: 7px solid #d62828;
+    border-radius: 12px;
+}
+
+.emergency-box h3 {
+    color: #d62828;
+    margin-bottom: 12px;
+}
+
+.distress {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff8e1;
+    border-radius: 10px;
+}
+
+.distress h4 {
+    color: #b76e00;
+    margin-bottom: 8px;
+}
+
+.steps {
+    max-width: 850px;
+    margin: auto;
+}
+
+.step {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.07);
+}
+
+.step strong {
+    color: #062b49;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.gallery figure {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery figcaption {
+    padding: 12px;
+    color: white;
+    background: #062b49;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Penanda tombol DISTRESS pada foto galeri ketiga */
+.distress-photo {
+    position: relative;
+}
+
+.distress-photo .arrow {
+    position: absolute;
+    top: 40%;
+    left: 22%;
+    color: #ff2020;
+    font-size: 52px;
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+    text-shadow: 2px 2px 4px #000;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+.contact {
+    background: #e8f1f7;
+    text-align: center;
+}
+
+.contact p {
+    margin: 8px 0;
+}
+
+footer {
+    background: #062b49;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #ffb703;
+    color: #062b49;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+}
+
+@media (max-width: 850px) {
+    nav {
+        justify-content: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .cards,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .card img,
+    .gallery img {
+        height: auto;
+        max-height: 350px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">SEAN AN</div>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#radio">Radio Pantai</a></li>
+            <li><a href="#keselamatan">Keselamatan</a></li>
+            <li><a href="#darurat">Darurat</a></li>
+            <li><a href="#kecelakaan">Kecelakaan</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="beranda">
+    <div class="hero-content">
+        <h1>Sean AN</h1>
+        <h2>Portal Edukasi Keselamatan Pelayaran</h2>
+        <p>
+            Informasi keselamatan pelayaran, komunikasi Radio Pantai,
+            peralatan keselamatan, dan tindakan dalam keadaan darurat.
+        </p>
+        <a href="#keselamatan" class="btn">Pelajari Keselamatan</a>
+        <a href="#darurat" class="btn">Informasi Darurat</a>
+    </div>
+</section>
+
+<section id="tentang">
+    <div class="section-title">
+        <h2>Tentang Website</h2>
+        <p>Media informasi dan edukasi keselamatan pelayaran</p>
+    </div>
+    <div class="about">
+        <p>
+            Website Sean AN dibuat sebagai media edukasi mengenai
+            keselamatan pelayaran dan komunikasi maritim. Website ini
+            menyajikan informasi Radio Pantai, VHF Channel 16, peralatan
+            keselamatan, keadaan darurat, dan kecelakaan pelayaran.
+        </p>
+    </div>
+</section>
+
+<section id="radio">
+    <div class="section-title">
+        <h2>Radio Pantai</h2>
+        <p>Komunikasi sangat penting dalam keselamatan pelayaran.</p>
+    </div>
+    <div class="radio-box">
+        <h3>VHF Marine Radio</h3>
+        <div class="channel">CHANNEL 16</div>
+        <p>
+            VHF Channel 16 digunakan untuk komunikasi keselamatan
+            dan panggilan marabahaya sesuai ketentuan radio maritim.
+        </p>
+    </div>
+</section>
+
+<section id="keselamatan">
+    <div class="section-title">
+        <h2>Peralatan Keselamatan</h2>
+        <p>Kenali perangkat komunikasi yang mendukung keselamatan.</p>
+    </div>
+
+    <div class="cards">
+        <article class="card">
+            <img src="IMG20260924093513.jpg"
+                 alt="Perangkat Radio Pantai"
+                 loading="lazy">
+            <div class="card-content">
+                <h3>Radio Pantai</h3>
+                <p>
+                    Perangkat komunikasi untuk membantu penyampaian
+                    informasi keselamatan antara kapal dan pihak di darat.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="IMG20260924093521.jpg"
+                 alt="Perangkat VHF Marine"
+                 loading="lazy">
+            <div class="card-content">
+                <h3>VHF Marine</h3>
+                <p>
+                    Radio VHF Marine digunakan untuk komunikasi suara
+                    dalam kegiatan pelayaran dan komunikasi keselamatan.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="IMG-20261007-WA0001.jpg"
+                 alt="Tombol DISTRESS pada radio VHF Marine"
+                 loading="lazy">
+            <div class="card-content">
+                <h3>Tombol DISTRESS</h3>
+                <p>
+                    Tombol pada perangkat radio tertentu untuk kondisi
+                    marabahaya. Gunakan hanya sesuai prosedur resmi
+                    dan petunjuk perangkat.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section id="darurat" class="emergency">
+    <div class="section-title">
+        <h2>Informasi Keadaan Darurat</h2>
+        <p>Utamakan keselamatan dan ikuti prosedur yang berlaku.</p>
+    </div>
+
+    <div class="emergency-box">
+        <h3>Komunikasi Darurat</h3>
+        <p>
+            Dalam keadaan darurat di kapal, komunikasi yang cepat dan
+            tepat sangat penting untuk mendapatkan bantuan.
+        </p>
+
+        <div class="distress">
+            <h4>VHF Channel 16</h4>
+            <p>
+                Digunakan untuk komunikasi keselamatan dan panggilan
+                marabahaya melalui radio VHF sesuai ketentuan maritim.
+            </p>
+        </div>
+
+        <div class="distress">
+            <h4>Tombol DISTRESS</h4>
+            <p>
+                Ikuti prosedur resmi dan petunjuk perangkat.
+                Jangan menekan tombol marabahaya untuk percobaan
+                tanpa izin dan prosedur yang sesuai.
+            </p>
+        </div>
+
+        <div class="distress">
+            <h4>Basarnas 115</h4>
+            <p>
+                Untuk keadaan yang membutuhkan pertolongan SAR,
+                hubungi Basarnas melalui nomor 115.
+            </p>
+            <a class="btn" href="tel:115">Hubungi Basarnas 115</a>
+        </div>
+    </div>
+</section>
+
+<section id="kecelakaan">
+    <div class="section-title">
+        <h2>Jika Terjadi Kecelakaan Pelayaran</h2>
+        <p>Beberapa hal penting yang perlu diperhatikan.</p>
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <strong>1. Tetap tenang</strong>
+            <p>Hindari kepanikan dan ikuti instruksi keselamatan awak kapal.</p>
+        </div>
+        <div class="step">
+            <strong>2. Gunakan peralatan keselamatan</strong>
+            <p>Gunakan peralatan yang tersedia sesuai kondisi dan prosedur.</p>
+        </div>
+        <div class="step">
+            <strong>3. Lakukan komunikasi darurat</strong>
+            <p>Sampaikan informasi keadaan darurat melalui sarana komunikasi yang tersedia.</p>
+        </div>
+        <div class="step">
+            <strong>4. Ikuti arahan petugas</strong>
+            <p>Ikuti arahan awak kapal, petugas keselamatan, atau pihak berwenang.</p>
+        </div>
+    </div>
+</section>
+
+<section id="galeri">
+    <div class="section-title">
+        <h2>Galeri</h2>
+        <p>Dokumentasi perangkat komunikasi keselamatan.</p>
+    </div>
+
+    <div class="gallery">
+        <figure>
+            <img src="IMG20260924093513.jpg"
+                 alt="Dokumentasi Radio Pantai"
+                 loading="lazy">
+            <figcaption>Gambar 3.1 — Radio Pantai</figcaption>
+        </figure>
+
+        <figure>
+            <img src="IMG20260924093521.jpg"
+                 alt="Dokumentasi VHF Marine"
+                 loading="lazy">
+            <figcaption>Gambar 3.2 — VHF Marine</figcaption>
+        </figure>
+
+        <figure class="distress-photo">
+            <img src="IMG-20261007-WA0001.jpg"
+                 alt="Tombol DISTRESS pada radio VHF Marine"
+                 loading="lazy">
+            <span class="arrow" aria-hidden="true">➜</span>
+            <figcaption>Gambar 3.3 — Tombol DISTRESS</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section id="kontak" class="contact">
+    <div class="section-title">
+        <h2>Informasi Kontak</h2>
+    </div>
+    <p><strong>Stasiun Radio Pantai Selatpanjang</strong></p>
+    <p>Kepulauan Meranti, Riau</p>
+    <p>
+        Untuk keadaan darurat, gunakan sarana komunikasi keselamatan
+        yang tersedia dan hubungi pihak berwenang.
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Sean AN | Edukasi Keselamatan Pelayaran</p>
+    <p>Stasiun Radio Pantai Selatpanjang</p>
+</footer>
+
+<button id="topBtn" aria-label="Kembali ke atas"
+        onclick="topFunction()">↑</button>
+
+<script>
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function () {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+function topFunction() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
+</body>
+</html>
