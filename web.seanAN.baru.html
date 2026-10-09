@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062b49">
+
+<title>Sean AN | Keselamatan Pelayaran</title>
+
+<style>
+:root {
+  --navy: #062b49;
+  --blue: #0b456b;
+  --orange: #ffb703;
+  --red: #c62828;
+  --white: #ffffff;
+  --bg: #f3f7fa;
+  --text: #243746;
+  --muted: #637586;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: var(--navy);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+.navbar {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.logo span {
+  color: var(--orange);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(100deg, #041e35ed, #062b49a8),
+    url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 760px;
+  padding: 80px 0;
+}
+
+.tag {
+  display: inline-block;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero p {
+  color: #e0edf7;
+  font-size: 17px;
+  max-width: 650px;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 5px 5px 5px 0;
+  border-radius: 7px;
+  background: var(--orange);
+  color: var(--navy);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.button-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+/* SECTION UMUM */
+
+section {
+  padding: 70px 0;
+  scroll-margin-top: 85px;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 38px;
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.25;
+  margin-bottom: 13px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.section-heading .tag {
+  color: #0a6ca6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #dce6ee;
+  padding: 24px;
+  border-radius: 13px;
+  box-shadow: 0 7px 22px #062b490a;
+}
+
+.card-icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.stats {
+  background: white;
+  border-bottom: 1px solid #dce6ee;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  color: var(--navy);
+  font-size: 25px;
+}
+
+.stat span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* RADIO CHANNEL 16 */
+
+.radio-section {
+  background: var(--navy);
+  color: white;
+}
+
+.radio-section .section-heading h2 {
+  color: white;
+}
+
+.radio-section .section-heading p {
+  color: #d7e5ef;
+}
+
+.radio-section .section-heading .tag {
+  color: var(--orange);
+}
+
+.radio-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: stretch;
+}
+
+.radio-image {
+  min-height: 330px;
+  position: relative;
+  overflow: hidden;
+  background: #0b3b5d;
+  border-radius: 15px;
+}
+
+.radio-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  object-fit: cover;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(transparent, #001827e8);
+}
+
+.radio-panel {
+  background: white;
+  color: var(--text);
+  padding: 27px;
+  border-radius: 15px;
+}
+
+.radio-panel h3 {
+  color: var(--navy);
+}
+
+.radio-status {
+  color: #176a49;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.frequency {
+  color: var(--navy);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 900;
+  margin: 5px 0;
+}
+
+.channel-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 5px;
+  background: #eaf4fb;
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.radio-description {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+/* TOMBOL DISTRESS */
+
+.distress-box {
+  padding: 20px;
+  text-align: center;
+  background: #fff3f3;
+  border: 1px solid #f2b6b6;
+  border-radius: 12px;
+}
+
+.distress-box .alarm {
+  font-size: 30px;
+}
+
+.distress-box h3 {
+  color: var(--red);
+  font-size: 23px;
+}
+
+.distress-box p {
+  font-size: 13px;
+  color: #6c4444;
+}
+
+.distress-button {
+  width: 100%;
+  margin: 15px 0 10px;
+  padding: 15px 10px;
+  background: var(--red);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #8f1515;
+}
+
+.distress-button:hover {
+  background: #a81919;
+}
+
+.small-note {
+  font-size: 11px !important;
+}
+
+/* MATERI RADIO */
+
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.signal-card {
+  background: #0b3b5d;
+  border: 1px solid #315873;
+  padding: 22px;
+  border-radius: 12px;
+}
+
+.signal-card h3 {
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+.signal-card p {
+  font-size: 14px;
+  color: #e0edf7;
+}
+
+/* KEADAAN DARURAT */
+
+.emergency-section {
+  background: #fff7e8;
+}
+
+.emergency-section .section-heading h2 {
+  color: #754200;
+}
+
+.emergency-card {
+  border-top: 4px solid #f0a000;
+}
+
+/* LANGKAH DARURAT */
+
+.steps {
+  max-width: 800px;
+  margin: auto;
+}
+
+.step {
+  display: flex;
+  gap: 17px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #dce6ee;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.step-number {
+  min-width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-weight: bold;
+}
+
+.step h3 {
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* KONTAK DARURAT */
+
+.contact-section {
+  text-align: center;
+  background: var(--navy);
+  color: white;
+}
+
+.contact-section h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  max-width: 720px;
+  color: #d7e5ef;
+  margin: 0 auto 18px;
+}
+
+.contact-number {
+  display: block;
+  color: var(--orange);
+  font-size: 42px;
+  font-weight: 900;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  background: #031a2b;
+  color: #c5d5e1;
+  font-size: 13px;
+}
+
+footer strong {
+  color: var(--orange);
+}
+
+/* MODAL SIMULASI DISTRESS */
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: #00111dcc;
+}
+
+.modal-content {
+  max-width: 480px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 27px;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.modal-icon {
+  font-size: 42px;
+}
+
+.modal-content h2 {
+  color: var(--red);
+  margin: 8px 0 12px;
+}
+
+.modal-content p {
+  font-size: 14px;
+}
+
+.modal-list {
+  text-align: left;
+  background: #f1f6fa;
+  padding: 17px 17px 17px 35px;
+  margin: 18px 0;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.warning {
+  color: #b42318;
+  font-size: 12px !important;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.close-button {
+  background: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* RESPONSIF HP */
+
+@media (max-width: 850px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 0;
+  }
+
+  .radio-content {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid,
+  .stats-grid,
+  .signal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  section {
+    padding: 52px 0;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .radio-panel {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGASI -->
+<header>
+  <div class="container navbar">
+    <a href="#beranda" class="logo">SEAN <span>AN</span></a>
+
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a>
+      <a href="#radio">Radio Pantai</a>
+      <a href="#kecelakaan">Kecelakaan Laut</a>
+      <a href="#darurat">Keadaan Darurat</a>
+      <a href="#alat">Alat Keselamatan</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- BERANDA -->
+<section class="hero" id="beranda">
+  <div class="container">
+    <div class="hero-content">
+      <span class="tag">PORTAL EDUKASI MARITIM</span>
+
+      <h1>
+        Kenali Bahaya Laut,<br>
+        <span>Utamakan Keselamatan.</span>
+      </h1>
+
+      <p>
+        Sean AN adalah media edukasi mengenai keselamatan pelayaran,
+        radio komunikasi maritim, jenis kecelakaan laut, dan cara
+        mengenali keadaan darurat di perairan.
+      </p>
+
+      <a href="#kecelakaan" class="button">Pelajari Materi</a>
+      <a href="#radio" class="button button-outline">Radio Channel 16</a>
+    </div>
+  </div>
+</section>
+
+<!-- INFORMASI SINGKAT -->
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat">
+      <strong>156,800 MHz</strong>
+      <span>Frekuensi VHF Channel 16</span>
+    </div>
+
+    <div class="stat">
+      <strong>115</strong>
+      <span>Kontak darurat Basarnas</span>
+    </div>
+
+    <div class="stat">
+      <strong>SOLAS</strong>
+      <span>Keselamatan jiwa di laut</span>
+    </div>
+  </div>
+</div>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <div class="container">
+    <div class="section-heading">
+      <span class="tag">Tentang Website</span>
+      <h2>Mengenal Keselamatan Pelayaran</h2>
+      <p>
+        Keselamatan pelayaran bertujuan melindungi jiwa manusia,
+        kapal, muatan, dan lingkungan laut melalui kesiapan,
+        komunikasi yang baik, serta kepatuhan terhadap prosedur.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-icon">🚢</div>
+        <h3>Keselamatan Kapal</h3>
+        <p>
+          Mengenal pemeriksaan kapal, kondisi mesin, navigasi,
+          dan kesiapan peralatan keselamatan.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📻</div>
+        <h3>Komunikasi Maritim</h3>
+        <p>
+          Memahami fungsi radio VHF, Channel 16, serta istilah
+          komunikasi marabahaya dan keselamatan.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛟</div>
+        <h3>Kesiapsiagaan</h3>
+        <p>
+          Mengenali bahaya, melaporkan keadaan darurat, dan
+          mengikuti arahan petugas penyelamat.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RADIO PANTAI -->
+<section class="radio-section" id="radio">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="tag">Komunikasi Maritim</span>
+      <h2>Radio Pantai Channel 16</h2>
+      <p>
+        Channel 16 pada radio VHF maritim menggunakan frekuensi
+        156,800 MHz untuk panggilan marabahaya, keselamatan, dan
+        panggilan awal sesuai prosedur yang berlaku.
+      </p>
+    </div>
+
+    <div class="radio-content">
+
+      <!-- GAMBAR RADIO -->
+      <div class="radio-image">
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Modernes_VHF-Funkger%C3%A4t.JPG"
+          alt="Radio VHF maritim"
+          onerror="this.onerror=null;this.src='https://placehold.co/600x400/0b3b5d/ffffff?text=RADIO+VHF+MARITIM';"
+        >
+        <div class="image-caption">
+          📻 Radio Komunikasi VHF Maritim
+        </div>
+      </div>
+
+      <!-- PANEL RADIO -->
+      <div class="radio-panel">
+        <div class="radio-status">
+          ● MEDIA EDUKASI RADIO
+        </div>
+
+        <h3>VHF MARINE RADIO</h3>
+        <div class="frequency">156,800 <small>MHz</small></div>
+        <span class="channel-badge">CHANNEL 16</span>
+
+        <p class="radio-description">
+          Channel 16 digunakan untuk komunikasi marabahaya,
+          keselamatan, dan panggilan awal. Penggunaan radio harus
+          mengikuti ketentuan dan prosedur komunikasi maritim.
+        </p>
+
+        <div class="distress-box">
+          <div class="alarm">🚨</div>
+          <h3>DISTRESS</h3>
+
+          <p>
+            Pelajari informasi yang perlu disampaikan saat
+            terjadi keadaan marabahaya di laut.
+          </p>
+
+          <button
+            type="button"
+            class="distress-button"
+            onclick="bukaSimulasi()"
+          >
+            ⚠ DISTRESS / MAYDAY
+          </button>
+
+          <p class="small-note">
+            Tombol ini hanya simulasi. Tidak mengirim sinyal
+            radio atau menghubungi petugas.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PENJELASAN ISTILAH RADIO -->
+    <div class="signal-grid">
+      <article class="signal-card">
+        <h3>🔴 MAYDAY</h3>
+        <p>
+          Panggilan marabahaya untuk situasi bahaya serius dan
+          segera yang mengancam jiwa atau kapal.
+        </p>
+      </article>
+
+      <article class="signal-card">
+        <h3>🟠 PAN-PAN</h3>
+        <p>
+          Panggilan mendesak untuk keadaan yang berkaitan dengan
+          keselamatan tetapi belum mencapai tingkat MAYDAY.
+        </p>
+      </article>
+
+      <article class="signal-card">
+        <h3>🔵 SÉCURITÉ</h3>
+        <p>
+          Digunakan untuk menyampaikan informasi keselamatan
+          navigasi atau peringatan meteorologi penting.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MATERI KECELAKAAN LAUT -->
+<section id="kecelakaan">
+  <div class="container">
+    <div class="section-heading">
+      <span class="tag">Materi Edukasi</span>
+      <h2>Jenis-Jenis Kecelakaan Laut</h2>
+      <p>
+        Kecelakaan laut dapat disebabkan oleh kondisi cuaca,
+        kerusakan kapal, kesalahan navigasi, atau faktor lainnya.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-icon">🌊</div>
+        <h3>Kapal Tenggelam</h3>
+        <p>
+          Kapal kehilangan kemampuan mengapung. Penyebabnya dapat
+          berupa kebocoran, cuaca buruk, kerusakan, atau faktor lain.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🚢</div>
+        <h3>Tubrukan Kapal</h3>
+        <p>
+          Tabrakan antara kapal dengan kapal lain yang dapat
+          menimbulkan kerusakan dan membahayakan orang di kapal.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔥</div>
+        <h3>Kebakaran Kapal</h3>
+        <p>
+          Api dapat muncul akibat gangguan listrik, mesin,
+          bahan mudah terbakar, atau penyebab lainnya.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚓</div>
+        <h3>Kapal Kandas</h3>
+        <p>
+          Kapal tersangkut atau menyentuh dasar perairan dangkal,
+          karang, atau daratan sehingga sulit bergerak.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛟</div>
+        <h3>Orang Jatuh ke Laut</h3>
+        <p>
+          Orang jatuh dari kapal dan membutuhkan pertolongan
+          sesuai prosedur keselamatan.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔧</div>
+        <h3>Kerusakan Mesin</h3>
+        <p>
+          Gangguan mesin dapat membuat kapal kehilangan tenaga
+          penggerak atau hanyut di perairan.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🌪️</div>
+        <h3>Cuaca Buruk</h3>
+        <p>
+          Badai, angin kencang, gelombang tinggi, dan jarak
+          pandang terbatas dapat membahayakan pelayaran.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💧</div>
+        <h3>Kebocoran Kapal</h3>
+        <p>
+          Air masuk ke dalam kapal akibat kebocoran atau
+          kerusakan struktur kapal.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📡</div>
+        <h3>Kapal Hilang Kontak</h3>
+        <p>
+          Kapal tidak dapat dihubungi sesuai jadwal atau mengalami
+          gangguan komunikasi sehingga perlu ditindaklanjuti.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- KEADAAN DARURAT -->
+<section class="emergency-section" id="darurat">
+  <div class="container">
+    <div class="section-heading">
+      <span class="tag">Waspada dan Siaga</span>
+      <h2>Informasi Keadaan Darurat</h2>
+      <p>
+        Keadaan darurat merupakan situasi yang dapat mengancam
+        keselamatan manusia, kapal, atau lingkungan laut.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card emergency-card">
+        <div class="card-icon">🌧️</div>
+        <h3>Cuaca Ekstrem</h3>
+        <p>
+          Perhatikan peringatan resmi tentang badai, angin kencang,
+          gelombang tinggi, dan jarak pandang yang buruk.
+        </p>
+      </article>
+
+      <article class="card emergency-card">
+        <div class="card-icon">🆘</div>
+        <h3>Orang Jatuh ke Laut</h3>
+        <p>
+          Segera beri tahu awak kapal atau petugas yang bertanggung
+          jawab dan ikuti prosedur penyelamatan.
+        </p>
+      </article>
+
+      <article class="card emergency-card">
+        <div class="card-icon">🔥</div>
+        <h3>Kebakaran</h3>
+        <p>
+          Laporkan kejadian, ikuti alarm dan prosedur keselamatan,
+          jauhi bahaya, serta evakuasi jika diperintahkan.
+        </p>
+      </article>
+
+      <article class="card emergency-card">
+        <div class="card-icon">💧</div>
+        <h3>Kapal Kemasukan Air</h3>
+        <p>
+          Laporkan kebocoran kepada awak kapal dan ikuti prosedur
+          darurat serta arahan petugas yang berwenang.
+        </p>
+      </article>
+
+      <article class="card emergency-card">
+        <div class="card-icon">🩺</div>
+        <h3>Darurat Medis</h3>
+        <p>
+          Beri tahu awak kapal atau petugas medis. Sampaikan
+          kondisi orang yang membutuhkan bantuan.
+        </p>
+      </article>
+
+      <article class="card emergency-card">
+        <div class="card-icon">📡</div>
+        <h3>Gangguan Komunikasi</h3>
+        <p>
+          Ikuti prosedur komunikasi cadangan yang berlaku dan
+          laporkan gangguan kepada pihak yang bertanggung jawab.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PELAPORAN DARURAT -->
+<section id="pelaporan">
+  <div class="container">
+    <div class="section-heading">
+      <span class="tag">Panduan Pelaporan</span>
+      <h2>Informasi yang Perlu Disampaikan</h2>
+      <p>
+        Sampaikan informasi yang diketahui secara jelas kepada
+        petugas agar bantuan dapat dikoordinasikan.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div>
+          <h3>Identitas Kapal</h3>
+          <p>
+            Nama kapal, jenis kapal, dan identitas pelapor jika diketahui.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div>
+          <h3>Lokasi Kejadian</h3>
+          <p>
+            Posisi kapal, koordinat, nama perairan, atau patokan lokasi
+            yang diketahui.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div>
+          <h3>Jenis Kejadian</h3>
+          <p>
+            Jelaskan apakah terjadi kebakaran, tubrukan, kebocoran,
+            orang jatuh ke laut, atau keadaan darurat lainnya.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div>
+          <h3>Jumlah Orang Terdampak</h3>
+          <p>
+            Sampaikan jumlah orang yang membutuhkan bantuan dan kondisi
+            mereka jika diketahui.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <div>
+          <h3>Kondisi dan Bantuan</h3>
+          <p>
+            Jelaskan bahaya yang masih ada, kondisi cuaca, dan bantuan
+            yang dibutuhkan. Jangan menunda laporan hanya karena belum
+            mengetahui semua informasi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALAT KESELAMATAN -->
+<section id="alat" style="background:white;">
+  <div class="container">
+    <div class="section-heading">
+      <span class="tag">Perlengkapan Pelayaran</span>
+      <h2>Alat-Alat Keselamatan Kapal</h2>
+      <p>
+        Kenali fungsi alat keselamatan dan ikuti petunjuk penggunaan
+        serta pelatihan yang sesuai.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-icon">🦺</div>
+        <h3>Life Jacket</h3>
+        <p>
+          Jaket penolong yang membantu pemakai tetap mengapung di air.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛟</div>
+        <h3>Life Buoy</h3>
+        <p>
+          Pelampung penolong yang dapat digunakan untuk membantu
+          seseorang di air sesuai prosedur.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛶</div>
+        <h3>Life Raft</h3>
+        <p>
+          Rakit penolong yang menjadi sarana bertahan hidup saat
+          evakuasi diperlukan.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🧯</div>
+        <h3>APAR</h3>
+        <p>
+          Alat pemadam api ringan yang harus sesuai dengan jenis
+          kebakaran dan digunakan sesuai prosedur.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📡</div>
+        <h3>EPIRB</h3>
+        <p>
+          Perangkat pemancar sinyal marabahaya untuk membantu
+          pencarian dan pertolongan.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🩹</div>
+        <h3>Kotak P3K</h3>
+        <p>
+          Perlengkapan pertolongan pertama sambil menunggu
+          bantuan medis yang sesuai.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section class="contact-section" id="kontak">
+  <div class="container">
+    <span class="tag">Pencarian dan Pertolongan</span>
+    <h2>Utamakan Keselamatan Jiwa</h2>
+
+    <p>
+      Jika terjadi keadaan darurat yang membutuhkan pencarian dan
+      pertolongan di Indonesia, hubungi layanan resmi Basarnas
+      atau petugas yang berwenang.
+    </p>
+
+    <span class="contact-number">115</span>
+    <p>Kontak darurat Basarnas</p>
+
+    <a
+      class="button"
+      href="https://www.basarnas.go.id/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Kunjungi Website Basarnas
+    </a>
+
+    <p style="font-size:12px; margin-top:20px;">
+      Untuk keadaan darurat nyata, gunakan peralatan komunikasi
+      yang sesuai dan ikuti instruksi petugas.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- SIMULASI DISTRESS -->
+<div
+  class="modal"
+  id="distressModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+  hidden
+>
+  <div class="modal-content">
+    <div class="modal-icon">🚨</div>
+    <h2 id="modalTitle">Simulasi DISTRESS</h2>
+
+    <p>
+      Ini hanya latihan edukasi. Panggilan MAYDAY digunakan
+      dalam keadaan marabahaya serius dan segera.
+    </p>
+
+    <ul class="modal-list">
+      <li>Nama atau identitas kapal.</li>
+      <li>Posisi kapal saat kejadian.</li>
+      <li>Jenis keadaan darurat.</li>
+      <li>Jumlah orang yang membutuhkan bantuan.</li>
+      <li>Bantuan yang diperlukan.</li>
+    </ul>
+
+    <p class="warning">
+      SIMULASI SAJA — TIDAK ADA SINYAL RADIO YANG DIKIRIM.
+    </p>
+
+    <button
+      type="button"
+      class="close-button"
+      onclick="tutupSimulasi()"
+    >
+      Tutup Simulasi
+    </button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>SEAN AN</strong> | Edukasi Keselamatan Pelayaran</p>
+  <p>Media informasi dan pembelajaran keselamatan maritim.</p>
+  <p>&copy; <span id="tahun"></span> Sean AN</p>
+</footer>
+
+<script>
+function bukaSimulasi() {
+  const modal = document.getElementById("distressModal");
+  modal.hidden = false;
+
+  modal.querySelector(".close-button").focus();
+}
+
+function tutupSimulasi() {
+  const modal = document.getElementById("distressModal");
+  modal.hidden = true;
+
+  document.querySelector(".distress-button").focus();
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    const modal = document.getElementById("distressModal");
+
+    if (!modal.hidden) {
+      tutupSimulasi();
+    }
+  }
+});
+
+document.getElementById("distressModal").addEventListener(
+  "click",
+  function(event) {
+    if (event.target === this) {
+      tutupSimulasi();
+    }
+  }
+);
+
+document.getElementById("tahun").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
